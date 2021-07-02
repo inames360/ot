@@ -1,5 +1,5 @@
 /*
-更新地址：https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_ddnc_farmpark.js
+更新地址：https://raw.githubusercontent.com/inames360/ot/main/jd_europeancup.js
 ============Quantumultx===============
 [task_local]
 #欧洲狂欢杯
