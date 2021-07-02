@@ -10,7 +10,7 @@ export inviterNick3=""
 [task_local]
 0 11 * * * 
 [Script] 
-cron "10 11,17 * * *" script-path=jd_lsj.js,tag=檬京东零食街 
+cron "10 10,17 * * *" script-path=jd_lsj.js,tag=檬京东零食街 
 */
 const $ = new Env('柠檬京东零食街');
 const notify = $.isNode() ? require('./sendNotify') : '';
