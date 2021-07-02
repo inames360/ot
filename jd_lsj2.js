@@ -11,7 +11,7 @@ export lsjdh="jdAward4" ##兑换牛奶
 [task_local]
 22 19 * * *
 [Script] 
-cron "22 19 * * *" 
+cron "22 19 * * *" tag=京东零食街exchange
 */
 const $ = new Env('柠檬京东零食街');
 const notify = $.isNode() ? require('./sendNotify') : '';
