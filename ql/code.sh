@@ -7,8 +7,8 @@ dir_shell=/ql/shell
 . $dir_shell/share.sh
 
 ## 判断仓库类别及日志存在与否
-repo1='JDHelloWorld'
-repo2='panghu999'
+repo2='JDHelloWorld'
+repo1='panghu999'
 repo3='chinnkarahoi'
 if [ "$(ls $dir_log |grep panghu999_jd_scripts | wc -l)" -gt 0 ]; then
     repo=$repo1
