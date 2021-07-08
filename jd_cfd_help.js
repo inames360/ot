@@ -113,7 +113,7 @@ $.appId = 10009;
       console.log(`账号${$.UserName} 去参加寻宝大作战 ${id} 等待10秒`)
       await joinGroup(id)
       if (!$.canHelp) break
-      await $.wait(1000 * 10)
+      await $.wait(1000 * 20)
     }
   }
   await showMsg();
@@ -946,19 +946,19 @@ function joinGroup(value) {
     $.get(taskUrl(`user/JoinGroup`,
         `strGroupId=${value}&dwIsNewUser=0&pgtimestamp=${token['timestamp']}&phoneID=${token['phoneid']}&pgUUNum=${token['farm_jstoken']}`), (err, resp, data) => {
       try {
-        await $.wait(1000);
+    
         console.log(`delay here`)
         if (err) {
           console.log(`${JSON.stringify(err)}`)
           console.log(`${$.name} joinGroup API请求失败，请检查网路重试`)
-           await $.wait(1000);
+         
         console.log(`2delay here`)
         } else {
           // console.log(`joinGroup`, data)
           const { sErrMsg,iRet } = data = JSON.parse(data);
           if (iRet === 2005 || iRet === 9999) $.canHelp = false
           $.log(`iRet:${iRet} ${sErrMsg}`);
-           await $.wait(1000);
+         
         console.log(`3delay here`)
         }
       } catch (e) {
