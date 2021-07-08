@@ -89,9 +89,9 @@ $.appId = 10009;
       // console.log(`token：${JSON.stringify(token)}`)
       $.allTask = []
       $.info = {}
-      await shareCodesFormat()
+    //  await shareCodesFormat()
       await cfd();
-      await $.wait(5000);
+     // await $.wait(5000);
     }
   }
   for (let j = 0; j < cookiesArr.length; j++) {
@@ -105,7 +105,7 @@ $.appId = 10009;
       console.log(`账号${$.UserName} 去参加 ${id} 寻宝大作战`)
       await joinGroup(id)
       if (!$.canHelp) break
-      await $.wait(1000 * 10)
+      await $.wait(30000)
     }
     if (!$.canHelp) continue
     console.log(`\n\n寻宝大作战，助力作者\n`);
@@ -166,9 +166,9 @@ async function cfd() {
 
     // const endInfo = await getUserInfo(false);
     // await helpFriend()
-    $.result.push(
-        `【京东账号${$.index}】${$.nickName || $.UserName}`,
-        `【💵财富值】${beginInfo.ddwMoney}\n`
+  //  $.result.push(
+     //   `【京东账号${$.index}】${$.nickName || $.UserName}`,
+   //     `【💵财富值】${beginInfo.ddwMoney}\n`
     );
     // $.result.push(
     //     `【京东账号${$.index}】${$.nickName || $.UserName}`,
