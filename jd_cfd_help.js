@@ -169,7 +169,7 @@ async function cfd() {
   //  $.result.push(
      //   `【京东账号${$.index}】${$.nickName || $.UserName}`,
    //     `【💵财富值】${beginInfo.ddwMoney}\n`
-    );
+   // );
     // $.result.push(
     //     `【京东账号${$.index}】${$.nickName || $.UserName}`,
     //     `【💵财富值】任务前: ${beginInfo.ddwMoney}\n【💵财富值】任务后: ${endInfo.ddwMoney}`,
