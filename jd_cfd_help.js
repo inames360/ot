@@ -103,10 +103,10 @@ $.appId = 10009;
     if ($.shareCodes && $.shareCodes.length) console.log(`\n\n寻宝大作战，自己账号内部循环互助\n\n`);
     for (let id of $.shareCodes) {
       console.log(`账号${$.UserName} 去参加 ${id} 寻宝大作战`)
-       await $.wait(10000)
+      await $.wait(1000 * 1)
       await joinGroup(id)
       if (!$.canHelp) break
-      await $.wait(1000 * 10)
+      await $.wait(1000 * 2)
     }
     if (!$.canHelp) continue
     console.log(`\n\n寻宝大作战，助力作者\n`);
@@ -946,38 +946,22 @@ function joinGroup(value) {
   return new Promise( async (resolve) => {
     $.get(taskUrl(`user/JoinGroup`,
         `strGroupId=${value}&dwIsNewUser=0&pgtimestamp=${token['timestamp']}&phoneID=${token['phoneid']}&pgUUNum=${token['farm_jstoken']}`), (err, resp, data) => {
-         console.log(`1 here`)
-console.log(`2 here`)
       try {
-console.log(`3 here`)
-console.log(`4 here`)
         if (err) {
            console.log(`${JSON.stringify(err)}`)
            console.log(`${$.name} joinGroup API请求失败，请检查网路重试`)
-console.log(`5 here`)
-console.log(`6 here`) 
-         
+
         } else {
-console.log(`7 here`)
-console.log(`8 here`)
           // console.log(`joinGroup`, data)
           const { sErrMsg,iRet } = data = JSON.parse(data);
-console.log(`9 here`)
-console.log(`10 here`)
+
           if (iRet === 2005 || iRet === 9999) $.canHelp = false
           $.log(`iRet:${iRet} ${sErrMsg}`);
-         
-console.log(`11 here`)
-console.log(`12 here`)
+
         }
       } catch (e) {
-console.log(`13 here`)
-console.log(`14 here`)
         $.logErr(e, resp);
       } finally {
-        
-console.log(`15 here`)
-console.log(`16 here`)
         resolve(data || {});
       }
     });
