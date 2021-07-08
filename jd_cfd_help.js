@@ -103,10 +103,14 @@ $.appId = 10009;
     if ($.shareCodes && $.shareCodes.length) console.log(`\n\n寻宝大作战，自己账号内部循环互助\n\n`);
     for (let id of $.shareCodes) {
       console.log(`账号${$.UserName} 去参加 ${id} 寻宝大作战`)
-      await $.wait(1000 * 1)
+      await $.wait(1000 * 5)
+      await joinGroup(id)
+      await $.wait(1000 * 15)
+      await joinGroup(id)
+      await $.wait(1000 * 15)
       await joinGroup(id)
       if (!$.canHelp) break
-      await $.wait(1000 * 2)
+      await $.wait(1000 * 15)
     }
     if (!$.canHelp) continue
     console.log(`\n\n寻宝大作战，助力作者\n`);
@@ -114,7 +118,7 @@ $.appId = 10009;
       console.log(`账号${$.UserName} 去参加寻宝大作战 ${id} 等待10秒`)
       await joinGroup(id)
       if (!$.canHelp) break
-      await $.wait(1000 * 20)
+      await $.wait(1000 * 10)
     }
   }
   await showMsg();
